@@ -2338,3 +2338,11 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 1.3ms | Allocations: 5023)
 
 
+Started GET "/articles" for ::1 at 2019-11-04 09:35:13 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/codepoet/Documents/learning ruby/Rails_Project/Alpha-Blog/app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
