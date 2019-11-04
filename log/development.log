@@ -2346,3 +2346,73 @@ SyntaxError (/home/codepoet/Documents/learning ruby/Rails_Project/Alpha-Blog/app
 app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
 app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
 app/controllers/articles_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/articles/1" for ::1 at 2019-11-04 09:38:35 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 227)
+  Rendered layouts/_messages.html.erb (Duration: 1.0ms | Allocations: 139)
+Completed 200 OK in 79ms (Views: 34.1ms | ActiveRecord: 3.1ms | Allocations: 9833)
+
+
+Started GET "/articles" for ::1 at 2019-11-04 09:38:39 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1305)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 0.6ms | Allocations: 5394)
+
+
+Started GET "/articles/1/edit" for ::1 at 2019-11-04 09:38:41 +0100
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `set_article'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 10.8ms | Allocations: 1111)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 18.5ms | Allocations: 1406)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 38ms (Views: 33.2ms | ActiveRecord: 0.4ms | Allocations: 5995)
+
+
+Started PATCH "/articles/1" for ::1 at 2019-11-04 09:38:46 +0100
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"Qr6EYAYlWnnwqW3F3kB/+jUARM7s8/tLfjj1REZeReSd6DosDbM2mSs+OHKOtVI+clWounq2FxpzV2G5Z5HaIg==", "article"=>{"title"=>"This is my first article again", "description"=>"This is the description 2"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `set_article'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:24:in `update'
+  [1m[36mArticle Update (0.8ms)[0m  [1m[33mUPDATE "articles" SET "description" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["description", "This is the description 2"], ["updated_at", "2019-11-04 08:38:46.614170"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:24:in `update'
+  [1m[35m (112.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:24:in `update'
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 207ms (ActiveRecord: 113.6ms | Allocations: 4389)
+
+
+Started GET "/articles/1" for ::1 at 2019-11-04 09:38:46 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 82)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 20)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.4ms | Allocations: 4548)
+
+
+Started GET "/articles" for ::1 at 2019-11-04 09:38:50 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:9
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1051)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 18)
+Completed 200 OK in 42ms (Views: 40.0ms | ActiveRecord: 0.4ms | Allocations: 4993)
+
+
