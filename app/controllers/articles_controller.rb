@@ -29,10 +29,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show 
+  def show # rubocop:disable Style/EmptyMethod
   end
 
-  def edit 
+  def edit # rubocop:disable Style/EmptyMethod
   end
 
   def destroy
