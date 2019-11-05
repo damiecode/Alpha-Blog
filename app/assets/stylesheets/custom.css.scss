@@ -34,12 +34,21 @@
   font-weight: bold;
 }
 
-.navbar, .nav-button, .btn {
+.navbar, .nav-button, .custom-btn {
   background-color: #093f51 !important;
 }
 
 .nav-button {
   font-size: 1.7em;
+}
+
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
 }
 
 footer {
