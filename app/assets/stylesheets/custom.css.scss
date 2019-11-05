@@ -20,15 +20,21 @@
   height: 550px;
 }
 
-.jumbotron h1 {
+.jumbotron .text-div {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align:center;
   color: #fff;
   text-align: center;
+  line-height: 20px;
   margin-bottom: 30px;
   letter-spacing: -1px;
   font-weight: bold;
 }
 
-.navbar, .nav-button {
+.navbar, .nav-button, .btn {
   background-color: #093f51 !important;
 }
 
