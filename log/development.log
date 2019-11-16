@@ -6022,3 +6022,5 @@ Processing by ArticlesController#create as HTML
 Completed 200 OK in 82ms (Views: 72.8ms | ActiveRecord: 0.0ms | Allocations: 15749)
 
 
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from <main> at /home/codepoet/Documents/learning ruby/Rails_Project/Alpha-Blog/bin/rake:9)
