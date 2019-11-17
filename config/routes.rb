@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'page#home'
-  get 'about', to: 'page#about'
+  root 'pages#home'
+  get 'about', to: 'pages#about'
   resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end

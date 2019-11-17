@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PageController < ApplicationController
+class PagesController < ApplicationController
   def home; end
 
   def about; end
