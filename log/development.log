@@ -6034,3 +6034,39 @@ Migrating to Add (20191116073817)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2019-11-16 09:21:18 +0100
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PageController#home as HTML
+  Rendering page/home.html.erb within layouts/application
+  Rendered page/home.html.erb within layouts/application (Duration: 12.1ms | Allocations: 263)
+  Rendered layouts/_navigation.html.erb (Duration: 8.1ms | Allocations: 333)
+  Rendered layouts/_messages.html.erb (Duration: 13.5ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 16.3ms | Allocations: 151)
+Completed 200 OK in 3936ms (Views: 3877.3ms | ActiveRecord: 0.0ms | Allocations: 1300437)
+
+
+Started GET "/articles" for ::1 at 2019-11-16 09:21:54 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 148.1ms | Allocations: 10555)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 247ms (Views: 196.6ms | ActiveRecord: 4.6ms | Allocations: 25229)
+
+
+Started GET "/articles" for ::1 at 2019-11-16 09:24:45 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 28.0ms | Allocations: 1354)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 285)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 146)
+Completed 200 OK in 24444ms (Views: 24440.0ms | ActiveRecord: 0.4ms | Allocations: 1662430)
+
+
