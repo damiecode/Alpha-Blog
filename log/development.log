@@ -6756,3 +6756,621 @@ Processing by UsersController#edit as HTML
 Completed 200 OK in 171ms (Views: 78.8ms | ActiveRecord: 0.6ms | Allocations: 16810)
 
 
+Started GET "/users/2/" for ::1 at 2019-11-18 09:10:02 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 188)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 302)
+  Rendered layouts/_messages.html.erb (Duration: 1.6ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 146)
+Completed 200 OK in 123ms (Views: 81.5ms | ActiveRecord: 0.5ms | Allocations: 19995)
+
+
+Started GET "/users/2/" for ::1 at 2019-11-18 09:10:42 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 42)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 125)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 115ms (Views: 67.1ms | ActiveRecord: 6.1ms | Allocations: 18404)
+
+
+Started GET "/users/2/" for ::1 at 2019-11-18 09:10:57 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 42)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 125)
+  Rendered layouts/_messages.html.erb (Duration: 0.9ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 121ms (Views: 65.4ms | ActiveRecord: 12.6ms | Allocations: 18394)
+
+
+Started GET "/users/2/" for ::1 at 2019-11-18 09:11:30 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 194)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 302)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 146)
+Completed 200 OK in 120ms (Views: 80.5ms | ActiveRecord: 2.5ms | Allocations: 20330)
+
+
+Started GET "/users" for ::1 at 2019-11-18 09:12:19 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/signup" for ::1 at 2019-11-18 09:12:22 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 2.7ms | Allocations: 215)
+  Rendered users/_form.html.erb (Duration: 15.7ms | Allocations: 1684)
+  Rendered users/new.html.erb within layouts/application (Duration: 20.8ms | Allocations: 1988)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 95)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 0.0ms | Allocations: 14569)
+
+
+Started POST "/users" for ::1 at 2019-11-18 09:12:44 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"G6dNVL0q1INpImHr5xxhy/fFmL2Y7OPzUvT3rDeOoPV9G4Co5RTNPI9yZGXjsbM1bz4i68LCbp0AM6OAPgYcUA==", "user"=>{"username"=>"Damilola", "password"=>"[FILTERED]", "email"=>"codepoetlady@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Damilola"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "codepoetlady@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Damilola"], ["email", "codepoetlady@gmail.com"], ["created_at", "2019-11-18 08:12:45.209690"], ["updated_at", "2019-11-18 08:12:45.209690"], ["password_digest", "$2a$12$b6vWLPo0VZrDTOI2aWELNuz9ltdnDLMFgY8.5iNPjSO8VgKWxwKgm"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (103.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 554ms (ActiveRecord: 106.7ms | Allocations: 6082)
+
+
+Started GET "/articles" for ::1 at 2019-11-18 09:12:45 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 65.7ms | Allocations: 6442)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 27)
+Completed 200 OK in 156ms (Views: 117.2ms | ActiveRecord: 3.9ms | Allocations: 20553)
+
+
+Started GET "/users/3" for ::1 at 2019-11-18 09:13:03 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 40)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 123)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 0.4ms | Allocations: 12994)
+
+
+Started POST "/users" for ::1 at 2019-11-18 09:15:57 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"G6dNVL0q1INpImHr5xxhy/fFmL2Y7OPzUvT3rDeOoPV9G4Co5RTNPI9yZGXjsbM1bz4i68LCbp0AM6OAPgYcUA==", "user"=>{"username"=>"Donald", "password"=>"[FILTERED]", "email"=>"donaldakobundu@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Donald"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "donaldakobundu@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Donald"], ["email", "donaldakobundu@gmail.com"], ["created_at", "2019-11-18 08:15:58.135565"], ["updated_at", "2019-11-18 08:15:58.135565"], ["password_digest", "$2a$12$.n1oDKahz9FdukH0mRIjdenRHZcN5FGZ6UXjH3l08.53ZRJJ0PbT6"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (86.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 577ms (ActiveRecord: 90.1ms | Allocations: 5585)
+
+
+Started GET "/articles" for ::1 at 2019-11-18 09:15:58 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1080)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 76ms (Views: 73.1ms | ActiveRecord: 0.4ms | Allocations: 13536)
+
+
+Started GET "/users" for ::1 at 2019-11-18 09:16:05 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/4" for ::1 at 2019-11-18 09:16:09 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 40)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 94ms (Views: 85.4ms | ActiveRecord: 0.4ms | Allocations: 13006)
+
+
+Started GET "/users/4" for ::1 at 2019-11-18 09:17:11 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 40)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 86ms (Views: 74.7ms | ActiveRecord: 1.2ms | Allocations: 12978)
+
+
+Started POST "/users" for ::1 at 2019-11-18 09:17:51 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"G6dNVL0q1INpImHr5xxhy/fFmL2Y7OPzUvT3rDeOoPV9G4Co5RTNPI9yZGXjsbM1bz4i68LCbp0AM6OAPgYcUA==", "user"=>{"username"=>"Donald", "password"=>"[FILTERED]", "email"=>"nobsmoke123@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Donald"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "nobsmoke123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.1ms | Allocations: 155)
+  Rendered users/_form.html.erb (Duration: 19.5ms | Allocations: 1090)
+  Rendered users/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 1157)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 577ms (Views: 85.3ms | ActiveRecord: 2.0ms | Allocations: 17750)
+
+
+Started POST "/users" for ::1 at 2019-11-18 09:18:04 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"AeJxYXq3YngMkjowSSV3fqvCkKoZ5u1fbkx0QWChx/lnXrydIol7x+rCP75NiKWAMzkq/EPIYDE8iyBtaSl7XA==", "user"=>{"username"=>"Donald20", "password"=>"[FILTERED]", "email"=>"nobsmoke123@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Donald20"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "nobsmoke123@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Donald20"], ["email", "nobsmoke123@gmail.com"], ["created_at", "2019-11-18 08:18:04.519996"], ["updated_at", "2019-11-18 08:18:04.519996"], ["password_digest", "$2a$12$gt0TxftuyxLi5c7ppyxeluHrGkPNJjfoiTTDo195CWill8dxca89e"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 572ms (ActiveRecord: 87.0ms | Allocations: 5590)
+
+
+Started GET "/articles" for ::1 at 2019-11-18 09:18:04 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1080)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 138ms (Views: 135.8ms | ActiveRecord: 0.4ms | Allocations: 13540)
+
+
+Started GET "/users/5" for ::1 at 2019-11-18 09:18:14 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 39)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 75ms (Views: 66.4ms | ActiveRecord: 0.4ms | Allocations: 13003)
+
+
+Started GET "/users" for ::1 at 2019-11-18 09:19:47 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (6.0.0) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.0) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.0) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.0) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.0) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.0.7) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/signup" for ::1 at 2019-11-18 09:19:54 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.3ms | Allocations: 215)
+  Rendered users/_form.html.erb (Duration: 15.6ms | Allocations: 1630)
+  Rendered users/new.html.erb within layouts/application (Duration: 23.7ms | Allocations: 1932)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 282)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 146)
+Completed 200 OK in 173ms (Views: 166.8ms | ActiveRecord: 0.0ms | Allocations: 16279)
+
+
+Started POST "/users" for ::1 at 2019-11-18 09:20:09 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"etvXORljVtwIkgdUe4M990Y3eAPvga9oCempOh2IYN8cZxrFQV1PY+7CAtp/Lu8J3szCVbWvIgZbLv0WFADceg==", "user"=>{"username"=>"snowweb", "password"=>"[FILTERED]", "email"=>"snoww3b@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "snowweb"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "snoww3b@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "snowweb"], ["email", "snoww3b@gmail.com"], ["created_at", "2019-11-18 08:20:10.321197"], ["updated_at", "2019-11-18 08:20:10.321197"], ["password_digest", "$2a$12$u8UYlQho8xaWeWsP124QDeo8hvaQ6zkl9MGdIkO/JmyYlS.dyN9Ay"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[35m (58.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 550ms (ActiveRecord: 61.2ms | Allocations: 5583)
+
+
+Started GET "/articles" for ::1 at 2019-11-18 09:20:10 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1344)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 27)
+Completed 200 OK in 80ms (Views: 73.0ms | ActiveRecord: 0.4ms | Allocations: 14529)
+
+
+Started GET "/users/6" for ::1 at 2019-11-18 09:20:22 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 185)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 123)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 78ms (Views: 71.1ms | ActiveRecord: 0.4ms | Allocations: 13307)
+
+
+Started GET "/users/2/" for ::1 at 2019-11-18 09:20:32 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 39)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 99ms (Views: 83.6ms | ActiveRecord: 6.7ms | Allocations: 12979)
+
+
+Started GET "/users/3" for ::1 at 2019-11-18 09:20:37 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 39)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 69ms (Views: 56.0ms | ActiveRecord: 2.9ms | Allocations: 12980)
+
+
+Started GET "/users/3" for ::1 at 2019-11-18 09:23:09 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 188)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 307)
+  Rendered layouts/_messages.html.erb (Duration: 1.2ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 146)
+Completed 200 OK in 141ms (Views: 96.9ms | ActiveRecord: 2.9ms | Allocations: 20321)
+
+
+Started GET "/users/4" for ::1 at 2019-11-18 09:23:16 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 43)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 119)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 26)
+Completed 200 OK in 71ms (Views: 65.8ms | ActiveRecord: 0.5ms | Allocations: 12994)
+
+
+Started GET "/users/5" for ::1 at 2019-11-18 09:23:22 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 41)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 90ms (Views: 80.1ms | ActiveRecord: 0.4ms | Allocations: 13007)
+
+
+Started GET "/articles" for ::1 at 2019-11-18 09:27:25 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (7.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 47.7ms | Allocations: 5695)
+  Rendered articles/index.html.erb within layouts/application (Duration: 52.7ms | Allocations: 5996)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 277)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 3.5ms | Allocations: 146)
+Completed 200 OK in 148ms (Views: 122.3ms | ActiveRecord: 9.5ms | Allocations: 20958)
+
+
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Update (3.7ms)[0m  [1m[33mUPDATE "articles" SET "updated_at" = ?, "user_id" = ? WHERE "articles"."id" = ?[0m  [["updated_at", "2019-11-18 08:31:58.975462"], ["user_id", 6], ["id", 7]]
+  [1m[35m (91.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Update (4.0ms)[0m  [1m[33mUPDATE "articles" SET "updated_at" = ?, "user_id" = ? WHERE "articles"."id" = ?[0m  [["updated_at", "2019-11-18 08:33:28.471869"], ["user_id", 6], ["id", 8]]
+  [1m[35m (90.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/articles" for ::1 at 2019-11-18 09:33:37 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 8.9ms | Allocations: 1648)
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1974)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 3145)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% @obj.each do |article|%>
+    2:   <div class="row">
+    3:     <div class="col-8 offset-2">
+    4:       <div class="card">
+  
+app/views/articles/_article.html.erb:1
+app/views/articles/index.html.erb:4
+Started GET "/articles" for ::1 at 2019-11-18 09:34:41 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 103.0ms | Allocations: 6286)
+  Rendered articles/index.html.erb within layouts/application (Duration: 107.4ms | Allocations: 6587)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 277)
+  Rendered layouts/_messages.html.erb (Duration: 2.5ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 146)
+Completed 200 OK in 183ms (Views: 176.0ms | ActiveRecord: 3.9ms | Allocations: 20833)
+
+
+Started GET "/users/5" for ::1 at 2019-11-18 09:35:17 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 16.4ms | Allocations: 833)
+  Rendered users/show.html.erb within layouts/application (Duration: 210.4ms | Allocations: 5979)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 122)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 283ms (Views: 268.0ms | ActiveRecord: 0.9ms | Allocations: 19443)
+
+
+Started GET "/users/6" for ::1 at 2019-11-18 09:35:22 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 9.1ms | Allocations: 1198)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1319)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 75ms (Views: 65.8ms | ActiveRecord: 0.8ms | Allocations: 14238)
+
+

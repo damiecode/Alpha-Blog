@@ -1,0 +1,24 @@
+<% obj.each do |article|%>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card">
+        <div class="article-title card-header">
+          <%= link_to article.title, article_path(article) %>
+        </div>
+        <div class="article-body card-body">
+          <%= truncate(article.description, length: 100) %>
+        <div class='article-meta-details'>
+           <small>Created by: <%= article.user.username if article.user %>,
+          <%= time_ago_in_words(article.created_at) %> ago,
+          last updated: <%= time_ago_in_words(article.updated_at) %> ago
+          </small>
+        </div>
+        </div>
+        <div class="article-actions card-footer">
+          <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-primary custom-btn' %>
+          <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?"},class: 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
