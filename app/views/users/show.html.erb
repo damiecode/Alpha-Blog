@@ -5,4 +5,10 @@
   </div>
 </div>
 <h4 class=text-center><%= @user.username %>'articles</h4>
+<div class='text-center'>
+   <%== pagy_bootstrap_nav(@pagy).html_safe %>
+</div>
 <%= render'articles/article', obj: @user.articles %>
+<div class='text-center'>
+   <%== pagy_bootstrap_nav(@pagy).html_safe %>
+</div>

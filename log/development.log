@@ -7569,3 +7569,991 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 103ms (Views: 89.3ms | ActiveRecord: 1.3ms | Allocations: 15199)
 
 
+Started GET "/articles" for ::1 at 2019-12-14 09:17:49 +0100
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 167.2ms | Allocations: 15198)
+  Rendered articles/index.html.erb within layouts/application (Duration: 192.0ms | Allocations: 16790)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 1.4ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 151)
+Completed 200 OK in 4257ms (Views: 4198.9ms | ActiveRecord: 9.0ms | Allocations: 1327818)
+
+
+Started GET "/articles/new" for ::1 at 2019-12-14 09:18:08 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 9.7ms | Allocations: 224)
+  Rendered articles/_form.html.erb (Duration: 101.7ms | Allocations: 4643)
+  Rendered articles/new.html.erb within layouts/application (Duration: 116.5ms | Allocations: 4945)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 95)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 217ms (Views: 208.1ms | ActiveRecord: 0.0ms | Allocations: 17510)
+
+
+Started POST "/articles" for ::1 at 2019-12-14 09:18:24 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"QOPxQynwwftCZtCvvTDrcpH3IwbzKixCsAt0FlhkEfkeSq0eLhvSenwBm4mPKvFKKz2O8/ukkk8h+kcElgh1Bg==", "article"=>{"title"=>"This is an article", "description"=>"I am an article"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "This is an article"], ["description", "I am an article"], ["created_at", "2019-12-14 08:18:24.164134"], ["updated_at", "2019-12-14 08:18:24.164134"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[35m (110.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/9
+Completed 302 Found in 152ms (ActiveRecord: 112.0ms | Allocations: 4748)
+
+
+Started GET "/articles/9" for ::1 at 2019-12-14 09:18:24 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 29.4ms | Allocations: 3332)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 96)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 108ms (Views: 90.4ms | ActiveRecord: 3.0ms | Allocations: 16750)
+
+
+Started GET "/articles/9" for ::1 at 2019-12-14 09:18:32 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (14.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 28.7ms | Allocations: 1754)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 128ms (Views: 108.7ms | ActiveRecord: 15.5ms | Allocations: 14737)
+
+
+Started GET "/articles" for ::1 at 2019-12-14 09:18:35 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 32.9ms | Allocations: 3373)
+  Rendered articles/index.html.erb within layouts/application (Duration: 44.4ms | Allocations: 4108)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 142ms (Views: 138.7ms | ActiveRecord: 1.6ms | Allocations: 16630)
+
+
+Started GET "/" for ::1 at 2019-12-14 09:18:36 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 4.7ms | Allocations: 138)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 123)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 192ms (Views: 189.9ms | ActiveRecord: 0.0ms | Allocations: 13246)
+
+
+Started GET "/" for ::1 at 2019-12-14 09:18:47 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 24)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 72ms (Views: 70.2ms | ActiveRecord: 0.0ms | Allocations: 12521)
+
+
+Started GET "/articles/new" for ::1 at 2019-12-14 09:18:49 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 4.7ms | Allocations: 856)
+  Rendered articles/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 920)
+  Rendered layouts/_navigation.html.erb (Duration: 7.7ms | Allocations: 95)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 104ms (Views: 102.1ms | ActiveRecord: 0.0ms | Allocations: 13426)
+
+
+Started POST "/articles" for ::1 at 2019-12-14 09:19:04 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"XxALemmg5351m+FxyOtVgtS0IpmRnZC/XVqRCF+6DCQBuVcnbkv0/0v8qlf68U+6bn6PbJkTLrLMq6IakdZo2w==", "article"=>{"title"=>"Another Article", "description"=>"This is another article"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Another Article"], ["description", "This is another article"], ["created_at", "2019-12-14 08:19:04.401992"], ["updated_at", "2019-12-14 08:19:04.401992"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[35m (89.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/10
+Completed 302 Found in 133ms (ActiveRecord: 90.6ms | Allocations: 4257)
+
+
+Started GET "/articles/10" for ::1 at 2019-12-14 09:19:04 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (3.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 22.2ms | Allocations: 1765)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 1.7ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 26)
+Completed 200 OK in 102ms (Views: 92.7ms | ActiveRecord: 4.3ms | Allocations: 14783)
+
+
+Started GET "/articles" for ::1 at 2019-12-14 09:19:09 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 66.1ms | Allocations: 4244)
+  Rendered articles/index.html.erb within layouts/application (Duration: 76.1ms | Allocations: 4975)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 155ms (Views: 146.7ms | ActiveRecord: 1.7ms | Allocations: 17494)
+
+
+Started GET "/articles/new" for ::1 at 2019-12-14 09:19:15 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 16.3ms | Allocations: 847)
+  Rendered articles/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 910)
+  Rendered layouts/_navigation.html.erb (Duration: 3.2ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 98ms (Views: 95.6ms | ActiveRecord: 0.0ms | Allocations: 13394)
+
+
+Started POST "/articles" for ::1 at 2019-12-14 09:19:26 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"8MMNwqNHnUG7Y0cyGPWCsuzs8B7Kf04CK94+a778qeGualGfpKyOwIUEDBQq75iKViZd68Lx8A+6Lw15cJDNHg==", "article"=>{"title"=>"A new article", "description"=>"Another new Article\r\n"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "A new article"], ["description", "Another new Article\r\n"], ["created_at", "2019-12-14 08:19:26.799948"], ["updated_at", "2019-12-14 08:19:26.799948"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[35m (100.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/11
+Completed 302 Found in 131ms (ActiveRecord: 109.6ms | Allocations: 4345)
+
+
+Started GET "/articles/11" for ::1 at 2019-12-14 09:19:26 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 37.2ms | Allocations: 1980)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 26)
+Completed 200 OK in 122ms (Views: 111.7ms | ActiveRecord: 1.2ms | Allocations: 14996)
+
+
+Started GET "/articles/new" for ::1 at 2019-12-14 09:19:33 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered articles/_form.html.erb (Duration: 8.0ms | Allocations: 847)
+  Rendered articles/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 910)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.0ms | Allocations: 13402)
+
+
+Started POST "/articles" for ::1 at 2019-12-14 09:19:46 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"ZcDTA+c8UpX29w2RWPTusuJelHF6MrbjaZpztX4JBAk7aY9e4NdBFMiQRrdq7vSKWJQ5hHK8CO74a0CnsGVg9g==", "article"=>{"title"=>"New article again", "description"=>"This is a new article"}, "commit"=>"Create Article"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.9ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New article again"], ["description", "This is a new article"], ["created_at", "2019-12-14 08:19:46.914589"], ["updated_at", "2019-12-14 08:19:46.914589"], ["user_id", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[35m (139.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/12
+Completed 302 Found in 177ms (ActiveRecord: 141.0ms | Allocations: 4250)
+
+
+Started GET "/articles/12" for ::1 at 2019-12-14 09:19:47 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1764)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 94)
+  Rendered layouts/_messages.html.erb (Duration: 0.5ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 4.2ms | Allocations: 26)
+Completed 200 OK in 154ms (Views: 90.5ms | ActiveRecord: 1.4ms | Allocations: 14944)
+
+
+Started GET "/articles" for ::1 at 2019-12-14 09:19:51 +0100
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 57.4ms | Allocations: 5089)
+  Rendered articles/index.html.erb within layouts/application (Duration: 76.8ms | Allocations: 7286)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 144ms (Views: 138.1ms | ActiveRecord: 1.9ms | Allocations: 19811)
+
+
+Started GET "/articles?page=2" for ::1 at 2019-12-14 09:19:59 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 13.0ms | Allocations: 1532)
+  Rendered articles/index.html.erb within layouts/application (Duration: 30.4ms | Allocations: 3262)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 90ms (Views: 86.4ms | ActiveRecord: 1.7ms | Allocations: 15793)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:20:02 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:3
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 75.5ms | Allocations: 5105)
+  Rendered articles/index.html.erb within layouts/application (Duration: 101.4ms | Allocations: 6838)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 26)
+Completed 200 OK in 159ms (Views: 155.2ms | ActiveRecord: 1.8ms | Allocations: 19370)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:27:18 +0100
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 5]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 252.9ms | Allocations: 17695)
+  Rendered articles/index.html.erb within layouts/application (Duration: 256.9ms | Allocations: 18322)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 2.7ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 151)
+Completed 200 OK in 4114ms (Views: 4040.4ms | ActiveRecord: 11.7ms | Allocations: 1320757)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:32:12 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 5]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 129.3ms | Allocations: 14223)
+  Rendered articles/index.html.erb within layouts/application (Duration: 132.4ms | Allocations: 14424)
+  Rendered layouts/_navigation.html.erb (Duration: 8.8ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 221ms (Views: 192.9ms | ActiveRecord: 8.5ms | Allocations: 28985)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:32:42 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 5]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 229.6ms | Allocations: 17756)
+  Rendered articles/index.html.erb within layouts/application (Duration: 238.7ms | Allocations: 18383)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 7.2ms | Allocations: 151)
+Completed 200 OK in 3705ms (Views: 3652.6ms | ActiveRecord: 8.8ms | Allocations: 1320816)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:33:13 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 88.4ms | Allocations: 12445)
+  Rendered articles/index.html.erb within layouts/application (Duration: 90.1ms | Allocations: 12647)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 162ms (Views: 135.8ms | ActiveRecord: 10.2ms | Allocations: 27219)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:34:46 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  Rendered articles/index.html.erb within layouts/application (Duration: 1123.5ms | Allocations: 120436)
+Completed 500 Internal Server Error in 1147ms (ActiveRecord: 1.7ms | Allocations: 122304)
+
+
+  
+ActionView::Template::Error (undefined method `pagy_bootstrap_nav' for #<#<Class:0x00007fe0a6d1b850>:0x00007fe0a6d193c0>
+Did you mean?  pagy_get_params):
+    1: <h1 class="text-center"> Listing all articles </h1>
+    2: <div class='text-center'>
+    3:   <%== pagy_bootstrap_nav(@pagy) %>
+    4: <div>
+    5: <%= render 'articles/article', obj: @articles %>
+    6: <div class='text-center'>
+  
+app/views/articles/index.html.erb:3
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:36:49 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 34.7ms | Allocations: 3691)
+  Rendered articles/index.html.erb within layouts/application (Duration: 42.2ms | Allocations: 4181)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 290)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 199)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 151)
+Completed 200 OK in 148ms (Views: 135.7ms | ActiveRecord: 1.7ms | Allocations: 19333)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:40:08 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:7:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (2.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 31.7ms | Allocations: 3386)
+  Rendered articles/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 3588)
+  Rendered layouts/_navigation.html.erb (Duration: 2.7ms | Allocations: 96)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 112ms (Views: 98.7ms | ActiveRecord: 4.2ms | Allocations: 16736)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:43:05 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 73.3ms | Allocations: 12473)
+  Rendered articles/index.html.erb within layouts/application (Duration: 74.7ms | Allocations: 12674)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 145ms (Views: 122.7ms | ActiveRecord: 7.8ms | Allocations: 27268)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:43:47 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 162.9ms | Allocations: 15944)
+  Rendered articles/index.html.erb within layouts/application (Duration: 167.4ms | Allocations: 16566)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 1.5ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 151)
+Completed 200 OK in 4011ms (Views: 3965.6ms | ActiveRecord: 7.2ms | Allocations: 1319002)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:44:08 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 99.7ms | Allocations: 12445)
+  Rendered articles/index.html.erb within layouts/application (Duration: 101.1ms | Allocations: 12642)
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 176ms (Views: 149.0ms | ActiveRecord: 10.2ms | Allocations: 27227)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:57:45 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (4.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 197.2ms | Allocations: 18622)
+  Rendered articles/index.html.erb within layouts/application (Duration: 203.9ms | Allocations: 19249)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 2.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 151)
+Completed 200 OK in 3935ms (Views: 3875.5ms | ActiveRecord: 10.1ms | Allocations: 1321607)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 09:59:59 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 65.7ms | Allocations: 5784)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 3.6ms | Allocations: 7642)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:00:37 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 78.4ms | Allocations: 6304)
+  Rendered articles/index.html.erb within layouts/application (Duration: 81.8ms | Allocations: 6794)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 277)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 146)
+Completed 200 OK in 194ms (Views: 173.5ms | ActiveRecord: 1.9ms | Allocations: 21779)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:04:16 +0100
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[36mCACHE Article Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered articles/index.html.erb within layouts/application (Duration: 1140.0ms | Allocations: 132362)
+Completed 500 Internal Server Error in 1207ms (ActiveRecord: 7.2ms | Allocations: 136533)
+
+
+  
+ActionView::Template::Error (undefined method `pagy_nav_bootstrap' for #<#<Class:0x00007f4914e8db68>:0x00007f4914e8c1f0>
+Did you mean?  pagy_bootstrap_nav):
+    1: <h1 class="text-center"> Listing all articles </h1>
+    2: <div class='text-center'>
+    3:   <%== pagy_nav_bootstrap(@pagy).html_safe %>
+    4: <div>
+    5: <%= render 'articles/article', obj: @articles %>
+    6: <div class='text-center'>
+  
+app/views/articles/index.html.erb:3
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:04:45 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 169.3ms | Allocations: 15013)
+  Rendered articles/index.html.erb within layouts/application (Duration: 172.8ms | Allocations: 15508)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 298)
+  Rendered layouts/_messages.html.erb (Duration: 1.8ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 151)
+Completed 200 OK in 3849ms (Views: 3830.5ms | ActiveRecord: 3.8ms | Allocations: 1315553)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:05:05 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 188.6ms | Allocations: 12460)
+  Rendered articles/index.html.erb within layouts/application (Duration: 193.8ms | Allocations: 12664)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 313ms (Views: 272.6ms | ActiveRecord: 10.9ms | Allocations: 27270)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:06:13 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "articles" LIMIT ?) subquery_for_count[0m  [["LIMIT", 3]]
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 42.1ms | Allocations: 3366)
+  Rendered articles/index.html.erb within layouts/application (Duration: 43.4ms | Allocations: 3565)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 146ms (Views: 135.9ms | ActiveRecord: 1.7ms | Allocations: 16705)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:06:29 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 94.3ms | Allocations: 14987)
+  Rendered articles/index.html.erb within layouts/application (Duration: 95.8ms | Allocations: 15190)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 160ms (Views: 139.6ms | ActiveRecord: 7.5ms | Allocations: 29696)
+
+
+Started GET "/articles?page=1" for ::1 at 2019-12-14 10:08:05 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 91.3ms | Allocations: 12378)
+  Rendered articles/index.html.erb within layouts/application (Duration: 92.8ms | Allocations: 12593)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 188ms (Views: 159.0ms | ActiveRecord: 9.1ms | Allocations: 27090)
+
+
+Started GET "/articles?page=2" for ::1 at 2019-12-14 10:08:13 +0100
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 50.5ms | Allocations: 3296)
+  Rendered articles/index.html.erb within layouts/application (Duration: 121.1ms | Allocations: 3513)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 93)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 210ms (Views: 192.1ms | ActiveRecord: 1.3ms | Allocations: 16598)
+
+
+Started GET "/articles?page=2" for ::1 at 2019-12-14 10:12:53 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles"[0m
+  ↳ app/controllers/articles_controller.rb:6:in `index'
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/articles/_article.html.erb:1
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:11
+  Rendered articles/_article.html.erb (Duration: 99.8ms | Allocations: 12587)
+  Rendered articles/index.html.erb within layouts/application (Duration: 106.9ms | Allocations: 13095)
+  Rendered layouts/_navigation.html.erb (Duration: 3.4ms | Allocations: 278)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 146)
+Completed 200 OK in 204ms (Views: 172.5ms | ActiveRecord: 13.9ms | Allocations: 29348)
+
+
+Started GET "/articles/10" for ::1 at 2019-12-14 10:13:04 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:48:in `set_article'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:3
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/show.html.erb:12
+  Rendered articles/show.html.erb within layouts/application (Duration: 42.7ms | Allocations: 3341)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 141ms (Views: 124.8ms | ActiveRecord: 1.7ms | Allocations: 16505)
+
+
+Started GET "/users/1" for ::1 at 2019-12-14 10:13:07 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 22.9ms | Allocations: 1796)
+  Rendered users/show.html.erb within layouts/application (Duration: 25.0ms | Allocations: 2079)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 96)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 111ms (Views: 96.4ms | ActiveRecord: 1.0ms | Allocations: 15745)
+
+
+Started GET "/" for ::1 at 2019-12-14 10:13:17 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 137)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 123)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 80ms (Views: 76.2ms | ActiveRecord: 0.0ms | Allocations: 13178)
+
+
+Started GET "/users" for ::1 at 2019-12-14 10:13:24 +0100
+Processing by UsersController#index as HTML
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ? OFFSET ?[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/users/index.html.erb:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/index.html.erb:12
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/users/index.html.erb:12
+  Rendered users/index.html.erb within layouts/application (Duration: 55.9ms | Allocations: 4357)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 97)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 27)
+Completed 200 OK in 149ms (Views: 133.5ms | ActiveRecord: 3.2ms | Allocations: 17595)
+
+
+Started GET "/users/1" for ::1 at 2019-12-14 14:21:13 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `show'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered articles/_article.html.erb (Duration: 5.9ms | Allocations: 1584)
+  Rendered users/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 2118)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.3ms | Allocations: 10840)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <% obj.each do |article|%>
+    2:   <div class="row">
+    3:     <div class="col-8 offset-2">
+    4:       <div class="card">
+  
+app/views/articles/_article.html.erb:1
+app/views/users/show.html.erb:11
+Started GET "/users/1" for ::1 at 2019-12-14 14:21:35 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `show'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 43.0ms | Allocations: 3690)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 1.1ms | Allocations: 6139)
+
+
+  
+ActionView::Template::Error (undefined method `article' for #<User:0x00007f4921d426c0>
+Did you mean?  articles
+               articles=):
+     8: <div class='text-center'>
+     9:    <%== pagy_bootstrap_nav(@pagy).html_safe %>
+    10: </div>
+    11: <%= render'articles/article', obj: @user.article %>
+    12: <div class='text-center'>
+    13:    <%== pagy_bootstrap_nav(@pagy).html_safe %>
+    14: </div>
+  
+app/views/users/show.html.erb:11
+Started GET "/users/1" for ::1 at 2019-12-14 14:21:52 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:36:in `show'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:37:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 70.2ms | Allocations: 6009)
+  Rendered users/show.html.erb within layouts/application (Duration: 78.0ms | Allocations: 6598)
+  Rendered layouts/_navigation.html.erb (Duration: 6.3ms | Allocations: 278)
+  Rendered layouts/_messages.html.erb (Duration: 1.8ms | Allocations: 191)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 146)
+Completed 200 OK in 246ms (Views: 213.9ms | ActiveRecord: 1.9ms | Allocations: 22126)
+
+

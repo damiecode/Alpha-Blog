@@ -1,5 +1,6 @@
 <h1 class='text-center'>All Alpha Bloggers</h1>
 <div class='text-center'>
+ <%== pagy_bootstrap_nav(@pagy).html_safe %>
   <% @users.each do |user| %>
   <ul class='listing'>
     <div class='row'>
@@ -14,4 +15,6 @@
   </ul>
 <%end%>
 </div>
-         
+<div class='text-center'>
+  <%== pagy_bootstrap_nav(@pagy).html_safe %>
+<div>
