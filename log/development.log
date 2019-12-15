@@ -10901,3 +10901,126 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 91ms (Views: 75.5ms | ActiveRecord: 2.3ms | Allocations: 7360)
 
 
+Started GET "/" for ::1 at 2019-12-15 17:32:50 +0100
+  [1m[35m (8.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 7.5ms | Allocations: 310)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /home/codepoet/Documents/learning ruby/Rails_Project/Alpha-Blog/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 11.3ms | Allocations: 496)
+  Rendered layouts/_messages.html.erb (Duration: 1.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 151)
+Completed 200 OK in 20775ms (Views: 20713.4ms | ActiveRecord: 0.0ms | Allocations: 1308013)
+
+
+Started GET "/signup" for ::1 at 2019-12-15 17:33:21 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.6ms | Allocations: 224)
+  Rendered users/_form.html.erb (Duration: 129.5ms | Allocations: 3484)
+  Rendered users/new.html.erb within layouts/application (Duration: 132.3ms | Allocations: 3791)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 101)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 296ms (Views: 219.7ms | ActiveRecord: 2.6ms | Allocations: 22619)
+
+
+Started POST "/users" for ::1 at 2019-12-15 17:33:44 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"OR2TlGzlQhITYlRco5qSE6MmYZHic/igIcvXAKIMs+/wWpO9/YjgICfG5fig8YZqH/2/i/UWzBnU3e41zcozSw==", "user"=>{"username"=>"codepoet", "password"=>"[FILTERED]", "email"=>"codepoet@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "codepoet"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "codepoet@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "codepoet"], ["email", "codepoet@gmail.com"], ["created_at", "2019-12-15 16:33:45.308952"], ["updated_at", "2019-12-15 16:33:45.308952"], ["password_digest", "$2a$12$hFKauDZK20d.uRfVEvsIhOfZMWFJfvTwZhzABasF21k1FBpZCXLJi"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (75.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 2483ms (ActiveRecord: 78.3ms | Allocations: 139413)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00007f5df27caae0>
+Did you mean?  @user):
+  
+app/controllers/users_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2019-12-15 17:34:04 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"OR2TlGzlQhITYlRco5qSE6MmYZHic/igIcvXAKIMs+/wWpO9/YjgICfG5fig8YZqH/2/i/UWzBnU3e41zcozSw==", "user"=>{"username"=>"codepoet", "password"=>"[FILTERED]", "email"=>"codepoet@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "codepoet"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "codepoet@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 5.9ms | Allocations: 292)
+  Rendered users/_form.html.erb (Duration: 17.5ms | Allocations: 1241)
+  Rendered users/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 1309)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 101)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 1041ms (Views: 102.3ms | ActiveRecord: 6.5ms | Allocations: 24015)
+
+
+Started POST "/users" for ::1 at 2019-12-15 17:34:22 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"iNSz199p8HJ9l9kaQZB+6DcukcS+wIwf8ziRCf3SiceZ9jwuEozZ9V/V22I1euLiy1eHR/9pxRhC5Ryh8wzjcg==", "user"=>{"username"=>"codepoet1", "password"=>"[FILTERED]", "email"=>"codepoet1@gmail.com"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "codepoet1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "codepoet1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "codepoet1"], ["email", "codepoet1@gmail.com"], ["created_at", "2019-12-15 16:34:23.726741"], ["updated_at", "2019-12-15 16:34:23.726741"], ["password_digest", "$2a$12$NMrHUnK9kuz7x8BoUz3aTOB2dYQmyGPnTKBRz8lz8whUSuB0xfZci"]]
+  ↳ app/controllers/users_controller.rb:17:in `create'
+  [1m[35m (57.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:17:in `create'
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 967ms (ActiveRecord: 62.2ms | Allocations: 5700)
+
+
+Started GET "/users/4" for ::1 at 2019-12-15 17:34:23 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `set_user'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/users_controller.rb:38:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:1
+  Rendered articles/_article.html.erb (Duration: 10.1ms | Allocations: 1071)
+  Rendered users/show.html.erb within layouts/application (Duration: 22.9ms | Allocations: 1576)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9:in `current_user'
+  Rendered layouts/_navigation.html.erb (Duration: 7.1ms | Allocations: 847)
+  Rendered layouts/_messages.html.erb (Duration: 0.4ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 27)
+Completed 200 OK in 313ms (Views: 130.7ms | ActiveRecord: 5.2ms | Allocations: 21754)
+
+
+Started DELETE "/logout" for ::1 at 2019-12-15 17:34:29 +0100
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JQbWuihP6xL67+sfYgBazlH7Z3xw5/NMjcOjAlP4eNg0JFlD5arCldit6WcW6sbErYJx/zFOuks8Hi6qXSYSbQ=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 394)
+
+
+Started GET "/" for ::1 at 2019-12-15 17:34:30 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 61)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 101)
+  Rendered layouts/_messages.html.erb (Duration: 0.3ms | Allocations: 34)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 27)
+Completed 200 OK in 148ms (Views: 145.9ms | ActiveRecord: 0.0ms | Allocations: 12712)
+
+
