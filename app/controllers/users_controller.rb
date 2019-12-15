@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit,:update,:show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :set_user, only: %i[edit update show]
+  before_action :require_same_user, only: %i[edit update]
 
   def index
     @pagy, @users = pagy(User.all, items: 4)
   end
+
   def new
     @user = User.new
   end
@@ -15,14 +16,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Alpha Blog #{@user.username}"
-      redirect_to articles_path
+      flash[:success] = 'please log in'
+      redirect_to login_path
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
