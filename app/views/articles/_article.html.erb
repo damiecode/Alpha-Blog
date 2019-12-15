@@ -14,10 +14,12 @@
           </small>
         </div>
         </div>
-        <div class="article-actions card-footer">
-          <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-primary custom-btn' %>
-          <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?"},class: 'btn btn-danger' %>
-        </div>
+        <% if logged_in? && current_user == article.user %>
+          <div class="article-actions card-footer">
+            <%= link_to 'Edit this article', edit_article_path(article), class: 'btn btn-primary custom-btn' %>
+            <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?"},class: 'btn btn-danger' %>
+          </div>
+        <%end%>
       </div>
     </div>
   </div>

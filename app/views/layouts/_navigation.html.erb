@@ -6,30 +6,42 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    <% if logged_in? %>
       <li class="nav-link">
         <%= link_to 'Articles', articles_path,class: 'text-white' %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-link">
+        <%= link_to 'New Article', new_article_path(current_user), class:'text-white' %>
+      </li>
+      <li class="nav-link">
+        <%= link_to 'Users',users_path, class:'text-white' %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Actions
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to 'New Article', new_article_path, class: 'dropdown-item' %>
-          <a class="dropdown-item" href="#">Another action</a>
+          <%= link_to 'Edit profile', edit_user_path(current_user), class: 'dropdown-item' %>
+          <%= link_to 'View profile', user_path(current_user), class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    </ul>
+    <li class="nav-link">
+      <%= link_to 'Log out', logout_path, method: :delete,class: 'text-white' %>
+    </li>
+    <%else%>
+      <li class="nav-link">
+        <%= link_to 'Log in', login_path,class: 'text-white' %>
+      </li>
+      <li class="nav-link">
+        <%= link_to 'Sign Up', signup_path,class: 'text-white' %>
+      </li>
+    <%end%>
   </div>
 </nav>
