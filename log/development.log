@@ -10854,3 +10854,78 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 113ms (Views: 99.6ms | ActiveRecord: 1.7ms | Allocations: 17135)
 
 
+Started GET "/login" for ::1 at 2019-12-15 11:28:23 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 27.7ms | Allocations: 3052)
+  Rendered layouts/_navigation.html.erb (Duration: 4.0ms | Allocations: 488)
+  Rendered layouts/_messages.html.erb (Duration: 1.6ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 151)
+Completed 200 OK in 115ms (Views: 95.6ms | ActiveRecord: 0.0ms | Allocations: 8585)
+
+
+Started GET "/login" for ::1 at 2019-12-15 11:28:52 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 511)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 101)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 26)
+Completed 200 OK in 29ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 3112)
+
+
+Started GET "/login" for ::1 at 2019-12-15 11:30:51 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 504)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 98)
+  Rendered layouts/_messages.html.erb (Duration: 0.8ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 26)
+Completed 200 OK in 10081ms (Views: 10079.0ms | ActiveRecord: 0.0ms | Allocations: 3457)
+
+
+Started GET "/login" for ::1 at 2019-12-15 11:31:26 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 69.4ms | Allocations: 3052)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+  Rendered layouts/_navigation.html.erb (Duration: 2.8ms | Allocations: 488)
+  Rendered layouts/_messages.html.erb (Duration: 1.3ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 151)
+Completed 200 OK in 9680ms (Views: 9656.4ms | ActiveRecord: 0.0ms | Allocations: 8942)
+
+
+Started GET "/login" for ::1 at 2019-12-15 11:38:57 +0100
+  [1m[35m (13.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 68.1ms | Allocations: 5727)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/codepoet/Documents/learning ruby/Rails_Project/Alpha-Blog/public/packs
+  Rendered layouts/_navigation.html.erb (Duration: 3.5ms | Allocations: 495)
+  Rendered layouts/_messages.html.erb (Duration: 3.2ms | Allocations: 203)
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 152)
+Completed 200 OK in 17230ms (Views: 17192.6ms | ActiveRecord: 0.0ms | Allocations: 13484)
+
+
+Started GET "/" for ::1 at 2019-12-15 11:39:25 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 108)
+  Rendered layouts/_messages.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 28)
+Completed 200 OK in 31ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 3360)
+
+
