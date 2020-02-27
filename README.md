@@ -19,7 +19,9 @@ Additional description about the project and its features.
 
 - Rails 6.0.2
 - Yarn 1.19.1
-- Ubuntu 18.04 and below
+- Ubuntu 19.04 and below
+
+The live version of the webapp can be found [here](https://alpha-blog-damie.herokuapp.com/)
 
 
 ## Getting Started
@@ -52,6 +54,7 @@ To start the server:```rails server```
 
 👤 **Damilola Ale**
 
+- Email: _codenlyn@gmail.com_
 - Github: [@damiecode](https://github.com/damiecode)
 - linkedin: [Damilola Ale](https://linkedin.com/in/damiecode/)
 
